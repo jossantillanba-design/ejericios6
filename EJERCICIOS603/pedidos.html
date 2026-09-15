@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedidos Taller Gamarra</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4" style="max-width: 600px;">
+
+  <form id="pedido" class="card p-3 mb-3">
+    <h5>Pedido de Polos - Gamarra</h5>
+    
+    <div class="mb-2">
+      <input type="text" name="cliente" class="form-control" placeholder="Nombre de contacto" required>
+    </div>
+    <div class="mb-2">
+      <input type="email" name="correo" class="form-control" placeholder="Correo electrónico" required>
+    </div>
+    <div class="mb-3">
+      <select name="color" class="form-select">
+        <option value="blanco">Blanco</option>
+        <option value="azul">Azul</option>
+        <option value="negro">Negro</option>
+      </select>
+    </div>
+
+    <fieldset class="border p-2 mb-3 rounded">
+      <legend class="float-none w-auto px-1 fs-6">Distribución por tallas</legend>
+      <div class="row g-2">
+        <div class="col-4">
+          <label>Talla S</label>
+          <input type="number" name="tallaS" class="form-control" value="1" min="0" max="200">
+        </div>
+        <div class="col-4">
+          <label>Talla M</label>
+          <input type="number" name="tallaM" class="form-control" value="0" min="0" max="200">
+        </div>
+        <div class="col-4">
+          <label>Talla L</label>
+          <input type="number" name="tallaL" class="form-control" value="0" min="0" max="200">
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-check mb-2">
+      <input type="checkbox" name="estampado" class="form-check-input" id="chEstampado">
+      <label for="chEstampado" class="form-check-label">Incluir estampado (+S/ 4.00 por polo)</label>
+    </div>
+
+    <div class="mb-3">
+      <textarea name="observaciones" class="form-control" placeholder="Observaciones"></textarea>
+    </div>
+
+    <div id="mensaje" class="text-danger fw-bold mb-2"></div>
+    <button type="submit" class="btn btn-primary w-100">Confirmar Pedido</button>
+  </form>
+
+  <div class="card p-3">
+    <h5>Resumen / Cotización del Pedido:</h5>
+    <pre id="resultado" class="mb-0 bg-light p-2 rounded" style="white-space: pre-wrap; font-family: monospace;"></pre>
+  </div>
+
+  <script src="script4.js"></script>
+</body>
+</html>
